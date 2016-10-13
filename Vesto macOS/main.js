@@ -1,1 +1,1 @@
-Logger.print("Hi there\n")
+Logger.output("Hi there\n")
