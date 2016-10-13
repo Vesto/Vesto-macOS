@@ -26,6 +26,7 @@ class ViewController: NSViewController {
             print("Exception \(value)")
         }
         let button = quark.context.evaluateScript("new Button({'5':10})").toObjectOf(NSButton.self) as! NSButton
+        quark.context.evaluateScript("Logger.print(5)")
         button.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
         view.addSubview(button)
     }
