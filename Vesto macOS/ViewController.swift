@@ -18,17 +18,19 @@ class ViewController: NSViewController {
     }
 
     @IBAction func startQuark(sender: NSButton) {
-        let quark = Quark(script:
-            "var button = Button(5)\n"
-        )
-        quark.start()
+        // Get the script
+        let scriptUrl = Bundle.main.url(forResource: "main", withExtension: "js")
+        
+        // Create Quark
+        let quark = Quark(script: try! String(contentsOf: scriptUrl!))
+        
+        // Handle exceptions
         quark.context.exceptionHandler = { context, value in
-            print("Exception \(value)")
+            print("⚠️ \(value)")
         }
-        let button = quark.context.evaluateScript("new Button({'5':10})").toObjectOf(NSButton.self) as! NSButton
-        quark.context.evaluateScript("Logger.print(5)")
-        button.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
-        view.addSubview(button)
+        
+        // Start Quark
+        quark.start()
     }
 
 }
