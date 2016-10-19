@@ -14,10 +14,19 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        startQuark()
     }
 
     @IBAction func startQuark(sender: NSButton) {
+        startQuark()
+    }
+
+    func startQuark() {
         // Get the script
         let scriptUrl = Bundle.main.url(forResource: "main", withExtension: "js")
         
@@ -26,11 +35,17 @@ class ViewController: NSViewController {
         
         // Handle exceptions
         quark.context.exceptionHandler = { context, value in
-            print("⚠️ \(value)")
+            if let value = value {
+                print("⚠️ \(value)")
+            } else {
+                print("⚠️ Unkown error.")
+            }
         }
+        
+        // Set the parent view so it can manipulate objects
+        quark.context.setObject(try! QKView(nsView: view), forKeyedSubscript: NSString(string: "parentView"))
         
         // Start Quark
         quark.start()
     }
-
 }
