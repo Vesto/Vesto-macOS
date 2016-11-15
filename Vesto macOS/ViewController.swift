@@ -10,6 +10,8 @@ import Cocoa
 import QuarkmacOS
 
 class ViewController: NSViewController {
+    
+    var quarkInstance: Quark?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class ViewController: NSViewController {
         
         // Create Quark
         let quark = Quark(script: try! String(contentsOf: scriptUrl!))
+        quarkInstance = quark // Retain a reference to Quark
         
         // Handle exceptions
         quark.context.exceptionHandler = { context, value in
