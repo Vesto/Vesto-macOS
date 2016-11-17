@@ -45,7 +45,7 @@ class ViewController: NSViewController {
         }
         
         // Set the parent view so it can manipulate objects
-//        quark.context.setObject(try! QKView(nsView: view), forKeyedSubscript: NSString(string: "parentView"))
+        quark.context.setObject(try! QKView(nsView: view), forKeyedSubscript: NSString(string: "parentView"))
         
         // Start Quark
         quark.start()
