@@ -21,7 +21,6 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        startQuark()
     }
 
     @IBAction func startQuark(sender: NSButton) {

@@ -12,6 +12,7 @@
 		BF1512FE1DAEFA1D00C39871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1512FD1DAEFA1D00C39871 /* Assets.xcassets */; };
 		BF1513011DAEFA1D00C39871 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1512FF1DAEFA1D00C39871 /* Main.storyboard */; };
 		BF1513431DAF5F5D00C39871 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = BF1513421DAF5F5D00C39871 /* main.js */; };
+		BF7C36D21DDCF7B100C1DB00 /* QuarkmacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7C36CF1DDCF7B100C1DB00 /* QuarkmacOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		BF1513001DAEFA1D00C39871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF1513021DAEFA1D00C39871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1513421DAF5F5D00C39871 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		BF7C36CD1DDCF7B100C1DB00 /* QuarkCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuarkCore.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Vesto-eepuggcvvroncbgxsofxolsjjwlx/Build/Products/Debug/QuarkCore.framework"; sourceTree = "<group>"; };
+		BF7C36CE1DDCF7B100C1DB00 /* QuarkExports.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuarkExports.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Vesto-eepuggcvvroncbgxsofxolsjjwlx/Build/Products/Debug/QuarkExports.framework"; sourceTree = "<group>"; };
+		BF7C36CF1DDCF7B100C1DB00 /* QuarkmacOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuarkmacOS.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Vesto-eepuggcvvroncbgxsofxolsjjwlx/Build/Products/Debug/QuarkmacOS.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7C36D21DDCF7B100C1DB00 /* QuarkmacOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				BF1512F81DAEFA1D00C39871 /* Vesto macOS */,
 				BF1512F71DAEFA1D00C39871 /* Products */,
+				BF7C36CC1DDCF7B000C1DB00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +68,16 @@
 				BF1513021DAEFA1D00C39871 /* Info.plist */,
 			);
 			path = "Vesto macOS";
+			sourceTree = "<group>";
+		};
+		BF7C36CC1DDCF7B000C1DB00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF7C36CD1DDCF7B100C1DB00 /* QuarkCore.framework */,
+				BF7C36CE1DDCF7B100C1DB00 /* QuarkExports.framework */,
+				BF7C36CF1DDCF7B100C1DB00 /* QuarkmacOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +306,7 @@
 				BF1513071DAEFA1D00C39871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
