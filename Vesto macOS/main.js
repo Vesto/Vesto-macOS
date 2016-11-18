@@ -9,8 +9,12 @@ button.backgroundColor = new QKColor(1,0,0,0.5)
 button.actionHandler = function(button) {
     QKLogger.output("Button clicked. " + button + "\n")
 }
-button.layoutHandler = function(button) {
-    QKLogger.output("Layed out " + button + "\n")
+parentView.frameChangedHandler = function(superview) {
+    button.rect = new QKRect(
+        new QKPoint(10, 10),
+        new QKSize(parentView.rect.size.width - 20, parentView.rect.size.height - 20)
+    )
 }
+QKLogger.output("Parent " + parentView + "\n")
 button.title = "hi"
 parentView.addSubview(button)
