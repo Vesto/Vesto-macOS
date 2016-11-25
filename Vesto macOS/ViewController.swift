@@ -8,6 +8,7 @@
 
 import Cocoa
 import QuarkmacOS
+import QuarkExports
 
 class ViewController: NSViewController {
     
@@ -45,7 +46,7 @@ class ViewController: NSViewController {
         }
         
         // Set the parent view so it can manipulate objects
-        quark.context.setObject(try! QKView(nsView: view), forKeyedSubscript: NSString(string: "parentView"))
+        quark.context.setObject(JSView(context: quark.context, view: view)!.value, forKeyedSubscript: NSString(string: "parentView"))
         
         // Start Quark
         quark.start()
