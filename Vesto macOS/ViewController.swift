@@ -42,6 +42,15 @@ class ViewController: NSViewController {
             } else {
                 print("⚠️ Unkown error.")
             }
+            
+            guard let value = value else {
+                return
+            }
+            print(value.toDictionary())
+            print(value.objectForKeyedSubscript("name"))
+            print(value.objectForKeyedSubscript("line"))
+            print(value.objectForKeyedSubscript("column"))
+            print(value.objectForKeyedSubscript("stack"))
         }
         
         // Add child view controller
