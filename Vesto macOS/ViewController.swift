@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import JavaScriptCore
 import QuarkmacOS
 import QuarkExports
 
@@ -18,15 +19,20 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         // Start quark
-        startQuark()
+        do {
+            try startQuark()
+        } catch {
+            print("Could not start Quark. \(error)")
+        }
     }
 
-    func startQuark() {
-        // Get the script
-        let scriptUrl = Bundle.main.url(forResource: "main", withExtension: "js")
+    private func startQuark() throws {
+        // Get the module path and URL
+        let modulePath = "/Users/NathanFlurry/Documents/Dev/Vesto/Code/Test Module"
+        let moduleURL = URL(fileURLWithPath: modulePath, isDirectory: true)
         
         // Create Quark
-        let quark = QuarkViewController(script: try! String(contentsOf: scriptUrl!))
+        let quark = try QuarkViewController(moduleURL: moduleURL)
         quarkInstance = quark // Retain a reference to Quark
         
         // Handle exceptions
