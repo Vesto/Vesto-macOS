@@ -18,10 +18,11 @@ Logger.print("~~~~~~")
 //QKLogger.output("Parent " + parentView + "\n")
 //button.title = "hi"
 //parentView.addSubview(button)
+//Logger.print(parentView)
 
 var button = new Button()
 button.rect = new Rect(new Point(10, 10), new Size(100, 100))
 button.title= "Screw This"
-button.backgroundColor = new Color(1, 0, 0, 0.5)
-button.shadow = new Shadow(new Point(10, 10), 20, new Color(0, 1, 0, 1))
+//button.backgroundColor = new Color(1, 0, 0, 0.5)
+//button.shadow = new Shadow(new Point(10, 10), 20, new Color(0, 1, 0, 1))
 parentView.addSubview(button)

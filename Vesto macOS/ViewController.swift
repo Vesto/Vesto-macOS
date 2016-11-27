@@ -12,19 +12,12 @@ import QuarkExports
 
 class ViewController: NSViewController {
     
-    var quarkInstance: Quark?
+    var quarkInstance: QuarkViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    
-    override func viewDidAppear() {
-        super.viewDidAppear()
         
-    }
-
-    @IBAction func startQuark(sender: NSButton) {
+        // Start quark
         startQuark()
     }
 
@@ -33,7 +26,7 @@ class ViewController: NSViewController {
         let scriptUrl = Bundle.main.url(forResource: "main", withExtension: "js")
         
         // Create Quark
-        let quark = Quark(script: try! String(contentsOf: scriptUrl!))
+        let quark = QuarkViewController(script: try! String(contentsOf: scriptUrl!))
         quarkInstance = quark // Retain a reference to Quark
         
         // Handle exceptions
@@ -45,10 +38,26 @@ class ViewController: NSViewController {
             }
         }
         
-        // Set the parent view so it can manipulate objects
-        quark.context.setObject(JSView(context: quark.context, view: view)!.value, forKeyedSubscript: NSString(string: "parentView"))
+        // Add child view controller
+        addChildViewController(quark)
+        view.addSubview(quark.view)
+        quark.view.wantsLayer = true
         
-        // Start Quark
-        quark.start()
+        // Constrain the view
+        quark.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints(
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-10-[v]-10-|",
+                options: [],
+                metrics: nil,
+                views: ["v": quark.view]
+            ) +
+            NSLayoutConstraint.constraints(
+                    withVisualFormat: "V:|-10-[v]-10-|",
+                    options: [],
+                    metrics: nil,
+                    views: ["v": quark.view]
+            )
+        )
     }
 }
