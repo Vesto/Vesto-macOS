@@ -9,7 +9,6 @@
 import Cocoa
 import JavaScriptCore
 import QuarkmacOS
-import QuarkExports
 
 class ViewController: NSViewController {
     
