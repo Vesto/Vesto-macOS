@@ -27,7 +27,7 @@ class ViewController: NSViewController {
 
     private func startQuark() throws {
         // Get the module path and URL
-        let modulePath = "/Users/NathanFlurry/Documents/Dev/Vesto/Code/Test Module"
+        let modulePath = "/Users/NathanFlurry/Documents/Dev/Vesto/Code/test-module"
         let moduleURL = URL(fileURLWithPath: modulePath, isDirectory: true)
         
         // Create Quark
