@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import JavaScriptCore
 import QuarkmacOS
+import QuarkCore
 
 class ViewController: NSViewController {
     
@@ -31,11 +31,11 @@ class ViewController: NSViewController {
         let moduleURL = URL(fileURLWithPath: modulePath, isDirectory: true)
         
         // Create Quark
-        let quark = try QuarkViewController(moduleURL: moduleURL)
+        let quark = try QuarkViewController(module: try QKModule(url: moduleURL))
         quarkInstance = quark // Retain a reference to Quark
         
         // Handle exceptions
-        quark.context.exceptionHandler = { context, value in
+        quark.instance.context.exceptionHandler = { context, value in
             if let value = value {
                 print("⚠️ \(value)")
             } else {
