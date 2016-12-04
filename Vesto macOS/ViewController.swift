@@ -36,6 +36,10 @@ class ViewController: NSViewController {
         
         // Handle exceptions
         quark.instance.context.exceptionHandler = { context, value in
+            print("~~~")
+
+            print(context!.globalObject.toDictionary())
+
             if let value = value {
                 print("⚠️ \(value)")
             } else {
@@ -45,11 +49,25 @@ class ViewController: NSViewController {
             guard let value = value else {
                 return
             }
-            print(value.toDictionary())
-            print(value.objectForKeyedSubscript("name"))
-            print(value.objectForKeyedSubscript("line"))
-            print(value.objectForKeyedSubscript("column"))
-            print(value.objectForKeyedSubscript("stack"))
+            
+            // Get data from error
+            guard let stack = value.objectForKeyedSubscript("stack").toString() else {
+                print("Could not get error data.")
+                return
+            }
+            let line = Int(value.objectForKeyedSubscript("line").toInt32())
+            let column = Int(value.objectForKeyedSubscript("column").toInt32())
+            
+            // Print the data
+            print("Line: \(line) Column: \(column) Stack:\n\(stack)")
+            
+            do {
+                let sourceMap = QKSourceMap(sourceMap: quark.instance.module.sourceMap)
+                print(try sourceMap.originalPositionFor(line: line, column: column))
+            } catch {
+                print("Could not get original position from source map. \(error)")
+            }
+            print("~~~")
         }
         
         // Add child view controller
