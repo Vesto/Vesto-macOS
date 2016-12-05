@@ -38,7 +38,7 @@ class ViewController: NSViewController {
         quark.instance.context.exceptionHandler = { context, value in
             print("~~~")
 
-            print(context!.globalObject.toDictionary())
+//            print(context!.globalObject.toDictionary())
 
             if let value = value {
                 print("⚠️ \(value)")
