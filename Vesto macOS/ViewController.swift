@@ -14,6 +14,13 @@ class ViewController: NSViewController {
     
     var quarkInstance: QuarkViewController?
 
+    override func loadView() {
+        // Load an empty view
+
+        view = NSView()
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

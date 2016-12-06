@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44B7F74D3EE01540155B9957 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B7FF1D05E33B5D7C1FEB32 /* main.swift */; };
 		BF1512FA1DAEFA1D00C39871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1512F91DAEFA1D00C39871 /* AppDelegate.swift */; };
 		BF1512FC1DAEFA1D00C39871 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1512FB1DAEFA1D00C39871 /* ViewController.swift */; };
 		BF1512FE1DAEFA1D00C39871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1512FD1DAEFA1D00C39871 /* Assets.xcassets */; };
-		BF1513011DAEFA1D00C39871 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1512FF1DAEFA1D00C39871 /* Main.storyboard */; };
 		BF7C36D21DDCF7B100C1DB00 /* QuarkmacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7C36CF1DDCF7B100C1DB00 /* QuarkmacOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44B7FF1D05E33B5D7C1FEB32 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BF1512F61DAEFA1D00C39871 /* Vesto macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vesto macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1512F91DAEFA1D00C39871 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF1512FB1DAEFA1D00C39871 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF1512FD1DAEFA1D00C39871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BF1513001DAEFA1D00C39871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF1513021DAEFA1D00C39871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF7C36CD1DDCF7B100C1DB00 /* QuarkCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuarkCore.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Vesto-eepuggcvvroncbgxsofxolsjjwlx/Build/Products/Debug/QuarkCore.framework"; sourceTree = "<group>"; };
 		BF7C36CF1DDCF7B100C1DB00 /* QuarkmacOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuarkmacOS.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Vesto-eepuggcvvroncbgxsofxolsjjwlx/Build/Products/Debug/QuarkmacOS.framework"; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 				BF1512F91DAEFA1D00C39871 /* AppDelegate.swift */,
 				BF1512FB1DAEFA1D00C39871 /* ViewController.swift */,
 				BF1512FD1DAEFA1D00C39871 /* Assets.xcassets */,
-				BF1512FF1DAEFA1D00C39871 /* Main.storyboard */,
 				BF1513021DAEFA1D00C39871 /* Info.plist */,
+				44B7FF1D05E33B5D7C1FEB32 /* main.swift */,
 			);
 			path = "Vesto macOS";
 			sourceTree = "<group>";
@@ -135,7 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF1512FE1DAEFA1D00C39871 /* Assets.xcassets in Resources */,
-				BF1513011DAEFA1D00C39871 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,21 +147,11 @@
 			files = (
 				BF1512FC1DAEFA1D00C39871 /* ViewController.swift in Sources */,
 				BF1512FA1DAEFA1D00C39871 /* AppDelegate.swift in Sources */,
+				44B7F74D3EE01540155B9957 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		BF1512FF1DAEFA1D00C39871 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF1513001DAEFA1D00C39871 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BF1513031DAEFA1D00C39871 /* Debug */ = {

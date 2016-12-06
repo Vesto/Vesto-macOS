@@ -9,14 +9,17 @@
 import Cocoa
 import QuarkmacOS
 
-@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    var window: NSWindow?
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // Create a window
+        let viewController = ViewController()
+        window = NSWindow(contentViewController: viewController)
+        window?.makeKeyAndOrderFront(nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 }
-
