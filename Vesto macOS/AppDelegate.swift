@@ -9,17 +9,24 @@
 import Cocoa
 import QuarkmacOS
 
+/*
+Notes:
+- To fix issue where AppCode hangs on "building", go to Xcode and untick/retick all "Shared" settings under scheme list
+*/
+
+@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create a window
-        let viewController = ViewController()
-        window = NSWindow(contentViewController: viewController)
-        window?.makeKeyAndOrderFront(nil)
+        // Do nothing
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
 }
