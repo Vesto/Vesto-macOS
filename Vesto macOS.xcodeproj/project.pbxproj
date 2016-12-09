@@ -59,9 +59,9 @@
 			children = (
 				BF1512F91DAEFA1D00C39871 /* AppDelegate.swift */,
 				BF1512FB1DAEFA1D00C39871 /* ViewController.swift */,
+				44B7FDD3D0ECD38F70EB659A /* Main.storyboard */,
 				BF1512FD1DAEFA1D00C39871 /* Assets.xcassets */,
 				BF1513021DAEFA1D00C39871 /* Info.plist */,
-				44B7FDD3D0ECD38F70EB659A /* Main.storyboard */,
 			);
 			path = "Vesto macOS";
 			sourceTree = "<group>";
