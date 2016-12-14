@@ -15,9 +15,12 @@ class ViewController: NSViewController {
     var quarkInstance: QuarkViewController?
 
     override func loadView() {
-        // Load an empty view
-
+        // Create an empty view
         view = NSView()
+        
+        // Make the view mask the contents (for rounded corners)
+        view.wantsLayer = true
+        view.layer?.masksToBounds = true
     }
 
 
@@ -86,13 +89,13 @@ class ViewController: NSViewController {
         quark.view.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraints(
             NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|-10-[v]-10-|",
+                withVisualFormat: "H:|[v]|",
                 options: [],
                 metrics: nil,
                 views: ["v": quark.view]
             ) +
             NSLayoutConstraint.constraints(
-                    withVisualFormat: "V:|-10-[v]-10-|",
+                    withVisualFormat: "V:|[v]|",
                     options: [],
                     metrics: nil,
                     views: ["v": quark.view]
